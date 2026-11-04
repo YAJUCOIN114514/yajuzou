@@ -1,0 +1,17 @@
+name: Rename yajuzou to index
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename file
+        run: |
+          git config user.name "YAJUCOIN114514"
+          git config user.email "yajudaigongen@gmail.com"
+          git mv yajuzou.html index.html
+          git commit -m "Rename yajuzou.html to index.html"
+          git push
